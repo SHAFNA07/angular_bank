@@ -1,0 +1,85 @@
+Angular
+.......
+
+npm - node package Manager    npm -v  (to know version)
+
+install
+     
+     npm i -g @angular/cli@latest     ng v
+
+project creation
+
+        ng new projectname
+
+running command
+
+       ng serve --open       ng s -open
+
+
+Angular technologies
+....................
+
+-html
+-css
+-typeScript  -strictly typed
+
+
+
+number:any
+
+transpiling -browser convrt ts code to js while running
+
+npm i
+
+root module
+     root component
+     we can create sub components inside the root module
+     sub modules (also can create)
+         components
+
+
+module-ts file  image all the components inside that module
+component -ts html css
+
+  selector - used to display the component
+
+  decorators- used to store meta data
+
+
+createne new Component
+     ng generate component   component_name
+     ng g c first component
+
+in index.js only works root components
+we can call other sub components in root component
+
+working cycle of angulr component
+.................................
+
+constructor--> ngOnInt---> other methods
+
+
+Data Binding In angular
+....................
+
+ts- componenthtml- viewBox
+
+
+1. one way Binding
+..................
+
+1.1 ts to html  (component to view data sharing)
+
+    1.1.1  string interpolation {{}}  using double curly bracket
+    1.1.2  property Binding  [property_name]="data"
+
+1.2  view to component (html to ts)\
+
+              1.2.1  event binding (eventname)="methods"
+
+
+
+
+
+
+
