@@ -1,3 +1,5 @@
+// https://shafna07.github.io/angular_bank/
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,8 +14,8 @@ export class LoginComponent implements OnInit
 
   //acno=""
   // or
-  acno:any 
-  psw:any
+  // acno:any 
+  // psw:any
 
   userDetails:any={
     1000:{Username:"lulu",acno:1000,password:"abc121",balance:0},
@@ -32,10 +34,47 @@ export class LoginComponent implements OnInit
 
   //methods
 
-  login()
+  // login()
+  // {
+  //   var acnum=this.acno
+  //   var psw=this.psw
+  //   var userDetails=this.userDetails
+  //   //alert ('login worked')
+  //   if (acnum in userDetails)
+  //   {
+  //     if(psw==userDetails[acnum]["password"])
+  //     {
+  //       alert('login success')
+  //     }
+  //     else{
+  //       alert('incorrect password')
+  //     }
+  //   }
+  //   else{
+  //     alert('incorrect acnum')
+  //   }
+    
+  // }
+
+//   acnoChange(event:any)
+//   {
+// console.log(this.acno);
+//   this.acno=event.target.value
+  
+//   }
+
+//   passChange(event:any)
+//   {
+//   console.log(this.psw);
+//   this.psw=event.target.value
+  
+//   }
+
+
+login(acnum:any,psw:any)
   {
-    var acnum=this.acno
-    var psw=this.psw
+    var acnum=acnum.value
+    var psw=psw.value
     var userDetails=this.userDetails
     //alert ('login worked')
     if (acnum in userDetails)
@@ -52,19 +91,5 @@ export class LoginComponent implements OnInit
       alert('incorrect acnum')
     }
     
-  }
-
-  acnoChange(event:any)
-  {
-console.log(this.acno);
-  this.acno=event.target.value
-  
-  }
-
-  passChange(event:any)
-  {
-  console.log(this.psw);
-  this.psw=event.target.value
-  
   }
 }
