@@ -119,8 +119,88 @@ in constructor
      access specifier  - private / public
      - private : can use the injecting class only in that class
      -public :  can use the injecting class in other classess of that file
+
+Angular Service
+...............
+
+its a file in angular
+all components can access the content of service file
+
+create  ng g s filename
+
+Angular Directives
+..................
+
+used to manipulate DOM
+
+1, component Directives
+2, structural Directives
+
+   -*ngFor
+   -*ngIf
+
+3, Attribute Directives
+
+
+Form Validation In Angular
+..........................
+
+form creation in angular
+
+   1. template driven form  (html only-seperste validation)
+
+   2. model driven form  (form creating using model- validation easy)
+
+   model driven form
+   .................
+
+   - reactive form 
+          -ReactiveFormsModule      -module  used to build model form
+      -  FormBuilder         - class  used to build model form
+
+          - a model contain     -form group
+                              - array
+                               -controller
+
+
+Local Storage In Angular
+........................
+
+CRUD
+
+create - localStorage.setItem()
+Read -   localStorage.getItem()
+update  - localStorage.setItem()
+delete -  localStorage.removeItem()
+
+
+child parent communication in angular
+.....................................
+
+     parent-child data sharing
+      .........................
+
+         @Input()  -  decorator used to share data from parent to child
      
+      child-parent data sharing
+      .........................
 
 
 
+date and time in angular
+........................
+
+date = class used to access current date datain angular
+
+Angular Pipes
+.............
+
+used to convert datas to another format
+
+Event Creation In Angular  (user defined events)
+.........................
+
+EventEmitter  - class used to create events
+
+emit() - method used to specify when the event happens
 
