@@ -51,27 +51,30 @@ export class LoginComponent implements OnInit
     if(this.loginForm.valid)
     {
 
-      const result = this.ds.login(acno,psw)
-    if (result)
-    {
-      alert('login success')
-      this.router.navigateByUrl('dashboard')
-    }
-    else
-    {
-      alert('incorrect acno or psw')
-    }
+      this.ds.login(acno,psw).subscribe((result:any)=>{
 
-    }
+        localStorage.setItem("currentUser",result.currentUser)
+        localStorage.setItem("currentAcno",JSON.stringify(result.currentAcno))
+        localStorage.setItem("token",JSON.stringify(result.token))
 
-    else
-    {
-      alert("invalid form")
-    }
 
+        alert(result.message)
+        this.router.navigateByUrl("dashboard")
+      },
+      result=>{
+        alert(result.error.message)
+      })
     
+    }
+
+    else{
+
+      alert('invalid form')
+    }
+   
   }
 }
+
 //   login()
 //   {
 //     var acnum=this.acno

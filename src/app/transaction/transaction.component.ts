@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscriber } from 'rxjs';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -12,13 +13,15 @@ export class TransactionComponent implements OnInit {
 
   constructor(private ds:DataService)
   {
-    this.transactionArray =this.ds.getTransaction(this.ds.currentAcno)
-    console.log(this.transactionArray);
+    this.ds.getTransaction(JSON.parse(localStorage.getItem("currentAcno") || "")).subscribe(
+      (result:any)=>{
+      this.transactionArray=result.transactions
+    })
+    
     
   }
 
   ngOnInit(): void {
     
   }
-
 }

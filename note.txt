@@ -204,3 +204,38 @@ EventEmitter  - class used to create events
 
 emit() - method used to specify when the event happens
 
+
+API creation in angular
+.......................
+
+
+HttpClientModule  - module
+HttpClient       - class
+     
+
+     methods
+     .......
+     get post put patch delete
+
+.......................................
+
+asynchrounous  in js
+
+  promise  -- then()
+
+           -  catch()
+
+
+asynchrounous  in ts      rxjs (reactive extension for js)
+ 
+
+     observable   --- subscribe()
+                   - catch()
+
+.....................................
+
+
+header creation in angular
+.........................
+
+HttpHeaders - class used to generate headers

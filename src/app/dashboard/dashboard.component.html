@@ -13,7 +13,7 @@
 </div> 
 
 
-<app-delete (onCancel)="cancelchild()" class="text-info" [item]="acno"></app-delete>
+<app-delete  (ondelete)="ondeleteAcc($event)"(onCancel)="cancelchild()" class="text-info" [item]="acno"></app-delete>
 
 <h3 style="color: aqua; "class="mt-3 p-2 ms-2">Welcome {{user}} </h3>
 

@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
 
     //access data from dataservice and store in a variable
 
-    this.user=this.ds.currentUser
+    this.user=localStorage.getItem("currentUser")
     this.sDetails=new Date()
   }
 
@@ -56,16 +56,12 @@ var amnt=this.depositForm.value.amnt
 
 if(this.depositForm.valid)
 {
-  const result=this.ds.deposit(acno,psw,amnt)
-
-if (result)
-{
-  alert(`your account has been credited with amnout ${amnt} and the available balance is ${result}` )
-}
-else
-{
-  alert('incorrect acno or password')
-}
+  const result=this.ds.deposit(acno,psw,amnt).subscribe((result:any)=>{
+    alert(result.message)
+  },
+  result=>{
+    alert(result.error.message)
+  })
 
 }
 else
@@ -74,28 +70,23 @@ else
 }
 
 }
+ withdraw() {
+var acno=this.withdrawForm.value.acno1
+var psw=this.withdrawForm.value.psw1
+var amnt=this.withdrawForm.value.amnt1
 
+ if (this.withdrawForm.valid)
+{
+  const result=this.ds.withdraw(acno,psw,amnt).subscribe((result:any)=>{
+    alert(result.message)
+  },
+  result=>{
+    alert(result.error.message)
+  })
 
-withdraw()
-{
-var acno1=this.withdrawForm.value.acno1
-var psw1=this.withdrawForm.value.psw1
-var amnt1=this.withdrawForm.value.amnt1
-
-if (this.withdrawForm.valid)
-{
-  const result=this.ds.withdraw(acno1,psw1,amnt1)
-if (result)
-{
-  alert(`your account has been debited with amnout ${amnt1} and the available balance is ${result}` )
 }
 else
 {
-  alert('incorrect acno or password')
-}
-
-}
-else{
   alert('invalid form')
 }
 
@@ -117,6 +108,21 @@ cancelchild()
 {
   this.acno=""
 }
+
+ondeleteAcc(event:any)
+
+{
+  this.ds.deleteAcc(event).subscribe((result:any)=>
+  {
+          alert(result.message)
+          this.logout()
+          this.router.navigateByUrl("")
+  })
+  
+ // console.log(event);
+  
+}
+
 }
 
 
